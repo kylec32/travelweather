@@ -39,7 +39,7 @@ export class WeatherService {
   }
 
   getForecastForLocation(latitude: number, longitude: number): Observable<Forecast[]> {
-    return this.httpClient.get<OWMForcastBaseResponse>(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${this.KEY}&units=imperial`)
+    return this.httpClient.get<OWMForcastBaseResponse>(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${this.KEY.substring(0,32)}&units=imperial`)
           .pipe(
             map(response => {
               return response.list.map(owmforecast => {
