@@ -1,0 +1,19 @@
+.icon-big {
+    font-size: 6em;
+    padding: 0.15em;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.weather-label {
+    padding: 0.15em;
+}
+
+.big {
+    font-size: 3em;
+}

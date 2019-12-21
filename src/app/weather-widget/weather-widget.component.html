@@ -1,0 +1,8 @@
+<!-- not an font therefore size is strange -->
+<div style="display: inline-block; transform: translateY(-50%);">
+    <img class="center icon-big" [src]="weatherData.weather.icon"/>
+    <div class="center weather-label">{{weatherData.weather.detailedLabel.toUpperCase()}}</div>
+    <div class="center">{{weatherData.locationName}}</div>
+    <div class="center big">{{temperature}}° F</div>
+</div>
+<app-forcast-details style="display: inline-block" [forecast]="weatherData.forcast"></app-forcast-details>
