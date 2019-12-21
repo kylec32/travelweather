@@ -9,12 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class WeatherService {
 
-  private readonly KEY: string = "";
+  private readonly KEY: string = "a175758ffbb12254c31d95c1a97feaa400000";
   
   constructor(private httpClient: HttpClient) { }
 
   getWeatherForLocation(latitude: number, longitude: number): Observable<LocationWeather> {
-    return this.httpClient.get<OWMBaseResponse>(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.KEY}&units=imperial`)
+    return this.httpClient.get<OWMBaseResponse>(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.KEY.substring(0,32)}&units=imperial`)
           .pipe(
             map(response => {
               let weather: LocationWeather = <LocationWeather>{};

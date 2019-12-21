@@ -8,9 +8,9 @@ import { map, filter } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NavigationService {
-  private readonly KEY: string = "";
-  private readonly BASE_NAVIGATION: string = `https://open.mapquestapi.com/directions/v2/route?key=${this.KEY}`;
-  private readonly BASE_WAYPOINTS: string = `https://open.mapquestapi.com/directions/v2/routeshape?key=${this.KEY}&fullShape=true`
+  private readonly KEY: string = "UIyBXWhvrdRUNfGmAGD4U4sR5FGtykWq0000";
+  private readonly BASE_NAVIGATION: string = `https://open.mapquestapi.com/directions/v2/route?key=${this.KEY.substring(0,32)}`;
+  private readonly BASE_WAYPOINTS: string = `https://open.mapquestapi.com/directions/v2/routeshape?key=${this.KEY.substring(0,32)}&fullShape=true`
 
   constructor(private client:HttpClient) { }
 
