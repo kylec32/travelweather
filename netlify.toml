@@ -5,6 +5,6 @@
   publish = "dist/travel-weather"
 
   # Default build command.
-  command = "npm install @angular/cli & npm install & ng build --prod & cd functions/forecast & npm install"
+  command = "npm install @angular/cli & npm install & ng build --prod & cd functions/forecast & npm install & cd ../.."
 
   functions = "functions"
