@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "cd functions/forecast & npm install",
+    "prebuild": "cd functions & npm install",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
