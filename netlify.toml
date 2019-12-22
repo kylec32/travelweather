@@ -5,6 +5,6 @@
   publish = "dist/travel-weather"
 
   # Default build command.
-  command = "npm build"
+  command = "npm run build"
 
   functions = "functions"
