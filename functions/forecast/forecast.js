@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const fetch = require('node-fetch'); 
 
 const KEY = process.env.DARK_SKY_KEY;
 
