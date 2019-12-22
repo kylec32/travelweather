@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "cd functions & npm install & cd npm install node-fetch",
+    "prebuild": "cd functions & npm install & cd forecast & npm install node-fetch",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
