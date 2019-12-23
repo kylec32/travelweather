@@ -1,0 +1,7 @@
+{
+    "/api":
+    {
+        "target": "https://travelweather.tk/api/",
+        "secure": false
+    } 
+}

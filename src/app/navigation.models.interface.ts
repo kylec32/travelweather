@@ -22,3 +22,8 @@ export interface Coordinate {
     latitude: number,
     longitude: number
 }
+
+export interface LocationDetails {
+    city: string,
+    state: string
+}

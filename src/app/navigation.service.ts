@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DirectionsResponse, RouteShapeResponse, Coordinate } from './navigation.models.interface';
+import { DirectionsResponse, RouteShapeResponse, Coordinate, LocationDetails } from './navigation.models.interface';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators'; 
 
@@ -33,6 +33,10 @@ export class NavigationService {
                       return processedPoints;
                   })
                 );        
+  }
+
+  getLocation(latitude: number, longitude: number): Observable<LocationDetails> {
+    return this.client.get<LocationDetails>(`/api/reverse-geocode?latitude=${latitude}&longitude=${longitude}`);
   }
 
   // getFilteredNumberOfWaypoints(sessionId: string, numberOfPoints:number): Observable<Coordinate[]> {

@@ -10,6 +10,6 @@ exports.handler = async function(event, context, callback) {
     let address = jsonResponse.Response.View[0].Result[0].Location.Address;
     callback(null, {
         statusCode: 200,
-        body: JSON.stringify({'city': address.City, 'State': address.State})
+        body: JSON.stringify({'city': address.City, 'state': address.State})
     });
 }

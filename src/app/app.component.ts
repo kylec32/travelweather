@@ -4,6 +4,11 @@ import { LocationWeather } from './weather.models.interface';
 import { Coordinate } from './navigation.models.interface';
 import { WeatherService } from './weather.service';
 
+export interface Location {
+  coordinate: Coordinate,
+  name: string
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +19,7 @@ export class AppComponent implements OnInit {
   startLocation:string = "West Jordan, UT";
   endLocation:string = "St. George, UT";
   testWeather: LocationWeather;
-  locations: Coordinate[];
+  locations: Location[];
 
   constructor(private navigationService: NavigationService,
               private weatherService: WeatherService) {
@@ -38,14 +43,22 @@ export class AppComponent implements OnInit {
                 .subscribe((points) => {
                   console.log(points);
                   let step = Math.floor(points.length / (this.locationCounts));
-                  let locations = [points[0]];
+                  let firstLocation = {'coordinate': points[0], name:''};
+
+                  // this.navigationService.getLocation(points[0].latitude, points[0].longitude)
+                  //                         .subscribe(locationName => firstLocation.name = locationName);
+
+                  let locations: Location[] = [firstLocation];
                   for(let i=step, index=0; index < (this.locationCounts -2); i += step, index++) {
-                    locations.push(points[i]);
+                    locations.push({'coordinate':points[i], name:''});
                   }
-                  locations.push(points[points.length-1]);
-                  console.log("Final points");
-                  console.log(locations);
+                  locations.push({'coordinate': points[points.length-1], name:''});
                   this.locations = locations;
+
+                  this.locations.forEach(locationItem => {
+                    this.navigationService.getLocation(locationItem.coordinate.latitude, locationItem.coordinate.longitude)
+                                            .subscribe(locationName => locationItem.name = locationName.city + ", " + locationName.state);
+                  })
                 })
         });
   }
