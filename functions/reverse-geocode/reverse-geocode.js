@@ -1,9 +1,9 @@
 const fetch = require('node-fetch'); 
 
-const KEY = process.env.DARK_SKY_KEY;
+const KEY = process.env.HERE_KEY;
 
 exports.handler = function(event, context, callback) {
-    let url = `https://api.darksky.net/forecast/${KEY}/${event.queryStringParameters.latitude},${event.queryStringParameters.longitude}`;
+    let url = `https://reverse.geocoder.ls.hereapi.com/6.2/reversegeocode.json?prox=${event.queryStringParameters.latitude}%2C${event.queryStringParameters.longitude}%2C1500&mode=retrieveAddresses&maxresults=1&gen=9&apiKey=${KEY}`
 
     (async () => {
         let response = await fetch(url);

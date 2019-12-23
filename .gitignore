@@ -49,3 +49,4 @@ Thumbs.db
 .netlify
 
 functions/forecast/node_modules
+functions/reverse-geocode/node_modules
