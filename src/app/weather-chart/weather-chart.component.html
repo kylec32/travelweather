@@ -1,9 +1,19 @@
-<div class="center" style="display: inline-block;">
+<!-- <div class="center" style="display: inline-block;">
     {{ dayOfTheWeek }}
     <br/>
     <img [src]="icon"/>
 </div>
 <div style="width: 300px; display: inline-block;">
     <canvas #lineChart >{{ chart }}</canvas>
+</div> -->
+<div style="display: inline-block;">
+    <div class="center">
+        {{ dayOfTheWeek }}
+        <br/>
+        <img [src]="icon"/>
+    </div>
+    <div style="width: 200px;">
+        <canvas #lineChart >{{ chart }}</canvas>
+    </div> 
 </div>
 

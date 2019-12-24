@@ -1,3 +1,4 @@
-<div *ngFor="let forecastDay of groupedForcasts">
+<!-- <div *ngFor="let forecastDay of groupedForcasts">
     <app-weather-chart [forecast]="forecastDay"></app-weather-chart>
-</div>
+</div> -->
+<app-wide-forecast [forecastGroups]="groupedForcasts"></app-wide-forecast>

@@ -1,7 +1,8 @@
 {
-    "/api":
+    "/api/*":
     {
-        "target": "http://travelweather.tk/api/",
-        "secure": false
+        "target": "http://5e0253dd4e46f0e687664f60--musing-stonebraker-b9ad24.netlify.com",
+        "secure": false,
+        "changeOrigin": true
     } 
 }

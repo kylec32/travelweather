@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 import { WeatherChartComponent } from './weather-chart/weather-chart.component';
 import { ForcastDetailsComponent } from './forcast-details/forcast-details.component';
+import { WideForecastComponent } from './wide-forecast/wide-forecast.component';
 
 const OPEN_WEATHER_MAP_API_KEY: string = "a175758ffbb12254c31d95c1a97feaa4";
 
@@ -24,7 +25,8 @@ const OPEN_WEATHER_MAP_API_KEY: string = "a175758ffbb12254c31d95c1a97feaa4";
     AppComponent,
     WeatherWidgetComponent,
     WeatherChartComponent,
-    ForcastDetailsComponent
+    ForcastDetailsComponent,
+    WideForecastComponent
   ],
   imports: [
     BrowserModule,
