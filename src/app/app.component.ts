@@ -26,9 +26,13 @@ export class AppComponent implements OnInit {
     this.locations = [];
   }
 
-  loadWeather(location: Coordinate) {
+  loadWeather(location: Location) {
     console.log(location);
-    this.weatherService.getWeatherForLocation(location.latitude, location.longitude)
+    // this.weatherService.getWeatherForLocation(location.latitude, location.longitude)
+    //               .subscribe(value => {
+    //                 this.testWeather = value;
+    //               });
+    this.weatherService.getWeatherForecastForLocation(location.coordinate.latitude, location.coordinate.longitude)
                   .subscribe(value => {
                     this.testWeather = value;
                   });

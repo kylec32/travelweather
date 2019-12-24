@@ -10,6 +10,16 @@ export interface LocationWeather {
     forcast: Forecast[]
 }
 
+export interface LocationWeather2 {
+    locationName: string,
+    latitude: number,
+    longitude: number,
+    tempeture: TemperatureData,
+    weather: Weather,
+    wind: Wind,
+    forcast: Forecast2[]
+}
+
 export interface TemperatureData {
     tempeture: number,
     feelsLike: number,
@@ -20,6 +30,8 @@ export interface TemperatureData {
 export interface Weather {
     mainLabel: string,
     detailedLabel: string,
+    rainProbability: number,
+    snowProbability: number,
     icon: string
 }
 
@@ -30,6 +42,13 @@ export interface Wind {
 
 export interface Forecast {
     dateTime: Date,
+    tempeture: TemperatureData,
+    weather: Weather,
+    wind: Wind
+}
+
+export interface Forecast2 {
+    dateTime: string,
     tempeture: TemperatureData,
     weather: Weather,
     wind: Wind

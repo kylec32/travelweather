@@ -1,7 +1,7 @@
 {
     "/api":
     {
-        "target": "https://travelweather.tk/api/",
+        "target": "http://travelweather.tk/api/",
         "secure": false
     } 
 }

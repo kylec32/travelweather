@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { OWMBaseResponse, LocationWeather, TemperatureData, Weather, Wind, OWMForcastBaseResponse, Forecast} from './weather.models.interface';
+import { OWMBaseResponse, LocationWeather, TemperatureData, Weather, Wind, OWMForcastBaseResponse, Forecast, LocationWeather2} from './weather.models.interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -12,6 +12,17 @@ export class WeatherService {
   private readonly KEY: string = "a175758ffbb12254c31d95c1a97feaa400000";
   
   constructor(private httpClient: HttpClient) { }
+
+  getWeatherForecastForLocation(latitude: number, longitude: number): Observable<LocationWeather> {
+    return this.httpClient.get<LocationWeather>(`/api/hourly-forecast?latitude=${latitude}&longitude=${longitude}`)
+                .pipe(
+                  map(response => {
+                      response.forcast.forEach(forecast => forecast.dateTime = new Date(forecast.dateTime));
+                      return response;
+                  }
+                  )
+                );
+  }
 
   getWeatherForLocation(latitude: number, longitude: number): Observable<LocationWeather> {
     return this.httpClient.get<OWMBaseResponse>(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.KEY.substring(0,32)}&units=imperial`)
